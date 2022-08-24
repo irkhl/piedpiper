@@ -1,0 +1,235 @@
+* {
+  box-sizing: border-box;
+  font-family: Roboto, sans-serif;
+  padding: 0;
+  margin: 0 auto;
+}
+
+.container { /*общие параметры контейнеров всех блоков*/
+  width: 100%;
+  max-width: 1219px;
+  padding: 15px 55px;
+}
+
+header {
+  background-color: #007765; /*данные из фигмы*/
+  position: fixed; /*чтобы не исчезала шапка при прокрутке*/
+  width: 100%; /*не дает шапке уйти вправо при позиции фикс*/
+  z-index: 1; /*чтобы шапка оставалась сверху при прокрутке*/
+}
+
+.logo {
+  float: left; /*расположение логотипа слева*/
+}
+.logo-img{
+  height: 45px; /*данные из фигмы*/
+}
+
+nav {
+  float: right; /*расположение навигации справа*/
+}
+nav ul {
+  margin: 0; /*для корректировки высоты блока*/
+  padding: 0; /*для корректировки высоты блока*/
+  list-style: none; /*убирает оформление*/
+}
+
+nav li {
+  display: inline-block; /*один из способов разместить элементы в строку*/
+}
+
+.container:after { /*после того, как применено обтекание, шапка исчезла. Это произошло потому, что плавающие элементы (для которых задано свойство float) изымаются из нормального потока и родительский контейнер больше не видит их высоту, поэтому и элемент <header> и элемент внутри него с классом .container схлопнулись. Чтобы исправить эту ситуацию, воспользуемся очисткой потока для элемента с классом .container:*/
+  content: "";
+  display: table;
+  clear: both;
+}
+
+nav a {
+  text-decoration: none; /*убирает подчеркивание ссылок*/
+  line-height: 45px; /*задаем высоту = высоте лого, чтобы текст разместился по центру*/
+}
+
+.nav{ /*создан для окраски разделителей*/
+  color:#fff;
+  font-size: 24px;
+}
+.nav1 {
+  padding: 0 5px; /*для расстояния му нав блоками*/
+  font-size: 24px; /*данные из фигмы*/
+  color: #fff; /*данные из фигмы*/
+}
+
+.nav1:hover {
+  /*декор при наведении на ссылки*/
+  color: #2b2c26; /* Цвет ссылки при наведении */
+  text-decoration: underline; /* Добавляем подчёркивание */
+  letter-spacing: 1.5px; /* шрифт расширяется */
+  font-size: 26px; /* шрифт увеличивается */
+}
+
+.section1 {
+  background-image: url(img/image.png); /*background: url(img/image.png) center no-repeat;*/ /* фон картинки */
+  background-repeat: no-repeat;
+  background-position: center;
+background-size: cover; /*для нормального отображения картинки*/
+  padding-top: 220px; /*данные из фигмы*/
+  padding-bottom: 160px; /*данные из фигмы*/
+}
+
+h1 {
+  font-weight: 500; /*данные из фигмы*/
+  font-size: 75px; /*данные из фигмы*/
+  line-height: 83px; /*данные из фигмы*/
+  text-align: center; /*данные из фигмы*/
+  color: #fff; /*данные из фигмы*/
+}
+
+.section2 {
+  background-color: #eee; /*данные из фигмы*/
+}
+
+h2 {
+  font-style: normal; /*данные из фигмы*/
+  font-weight: 500; /*данные из фигмы*/
+  font-size: 64px; /*данные из фигмы*/
+  line-height: 75px; /*данные из фигмы*/
+  text-align: center; /*данные из фигмы*/
+  color: #007765; /*данные из фигмы*/
+  padding-top: 82px; /*сделано по высоте шапки,чтобы при ссылке не наезжала*/
+}
+
+.text {
+  font-style: normal; /*данные из фигмы*/
+  font-weight: 400; /*данные из фигмы*/
+  font-size: 32px; /*данные из фигмы*/
+  line-height: 38px; /*данные из фигмы*/
+  color: #000; /*данные из фигмы*/
+  margin-top: 16px; /*данные из фигмы*/
+  padding-bottom: 50px; /*данные из фигмы*/
+}
+
+.section3 {
+  background-image: url(img/image1.png);
+  background-size: cover; /*для нормального отображения картинки*/
+  padding-bottom: 128px; /*данные из фигмы*/
+  padding-top: 127px; /*данные из фигмы*/
+}
+
+h3 {
+  font-weight: 500; /*данные из фигмы*/
+  font-style: italic; /*данные из фигмы*/
+  font-size: 48px; /*данные из фигмы*/
+  line-height: 56px; /*данные из фигмы*/
+  text-align: center; /*данные из фигмы*/
+  color: #fff; /*данные из фигмы*/
+}
+
+.section4 {
+  background-color: #fff; /*данные из фигмы*/
+}
+
+.ppc {
+  width: 115px;/*данные из фигмы*/
+  height: 115px;/*данные из фигмы*/
+}
+
+.button {
+  float: left; /*для обтекания текстом*/
+  border: none; /*убрана обводка*/
+  width: 115px; /* задан размер кнопки по размеру логотипа*/
+  height: 115px;
+  margin-right: 50px; /*расстояние от кнопки до текста*/
+  border-radius: 50%; /*чтобы сделать кнопку круглой из квадрата*/
+  box-shadow: 0px 15px 7px #7b7f84; /*заданы: сдвиг вправо, сдвиг вниз, радиус размытия, цвет*/
+  cursor: pointer; /*чтобы при наведении курсор менялся*/
+  transition: all 0.5s ease-out; /*медленный переход (анимация) от одной тени в другую*/
+}
+
+.button:hover { /*изменение кнопки при наведении*/
+  box-shadow: 0px 12px 7px #7b7f84; /*заданы: сдвиг вправо, сдвиг вниз, радиус размытия, цвет*/
+  transform: rotateX(36deg); /*поворот вокруг оси Х*/
+}
+
+.button:active { /*изменение кнопки при нажатии*/
+  box-shadow: 0px 3px 3px #7b7f84; 
+  transform: translateY(30px); /*сдвиг по оси У - НЕ работает, тк используется rotate*/
+  transform: rotateX(36deg);/*поворот вокруг оси Х*/
+}
+
+.text2 {
+  font-style: normal; /*данные из фигмы*/
+  font-weight: 400; /*данные из фигмы*/
+  font-size: 32px; /*данные из фигмы*/
+  line-height: 38px; /*данные из фигмы*/
+  color: #000; /*данные из фигмы*/
+  margin-top: 16px; /*данные из фигмы*/
+  padding-bottom: 20px; /*данные из фигмы*/
+}
+
+.section5 {
+  background-color: #eee; /*данные из фигмы*/
+  padding-bottom: 40px; 
+}
+
+.team {
+  margin-bottom: 30px; 
+}
+
+.members{
+  display: inline-flex; /*задан флекс контейнер, чтобы люди встали в ряд*/
+  height: 100%; /*требование к флексам*/
+  flex-wrap: wrap; /*перенос строк*/
+  justify-content: center; /*расположение по центру*/
+}
+
+.card{
+  display: flex; /*задан флекс контейнер, чтобы расположить элементы в колонну */
+  height: 100%;
+  flex-direction: column; /*колонна*/
+  margin: 15px 70px; 
+}
+
+.people {
+  width: 168px; /*данные из фигмы*/
+  height: 168px; /*данные из фигмы*/
+}
+
+.name-job{
+  display: flex; /*задан флекс контейнер, чтобы расположить элементы в колонну */
+  height: 100%;
+  justify-content: center; /*надписи по центру*/
+  flex-direction: column; /*колонна*/
+}
+
+.name {
+  font-style: normal; /*данные из фигмы*/
+  font-weight: 700; /*данные из фигмы*/
+  font-size: 24px; /*данные из фигмы*/
+  line-height: 28px; /*данные из фигмы*/
+  color: #007765; /*данные из фигмы*/
+  text-align: center; /*для центрирования подписи*/
+}
+
+.job {
+  font-style: italic; /*данные из фигмы*/
+  font-weight: 400; /*данные из фигмы*/
+  font-size: 18px; /*данные из фигмы*/
+  line-height: 21px; /*данные из фигмы*/
+  color: #000; /*данные из фигмы*/
+}
+
+
+
+.footer {
+  background-color: #333; /*данные из фигмы*/
+}
+
+.foot {
+  color: #fff; /*данные из фигмы*/
+  text-align: center; /*данные из фигмы*/
+  font-style: normal; /*данные из фигмы*/
+  font-weight: 400; /*данные из фигмы*/
+  font-size: 18px; /*данные из фигмы*/
+  line-height: 21px; /*данные из фигмы*/
+  padding: 48px 340px 64px 340px; /*данные из фигмы*/
+}
